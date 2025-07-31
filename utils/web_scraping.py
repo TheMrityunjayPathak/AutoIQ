@@ -118,3 +118,30 @@ def get_car_details(soup):
     df = pd.DataFrame({'model_name':clean_model_name,'km_driven':km_driven,'fuel_type':fuel_type,
                        'transmission':transmission,'owner':owner,'price':price,'link':link})
     return df
+
+def get_engine_capacity(urls):
+    """
+    Extract engine capacity values from a list of car listing page URLs.
+
+    Parameters:
+        urls (list of str): List of URLs pointing to individual car listings.
+
+    Returns:
+        list: A list containing engine capacity values (str) for each URL.
+              Returns None for entries where engine capacity is not found.
+    """
+    engine_capacity = []
+    for url in urls:
+        headers = {"User-Agent":"Mozilla/5.0"}
+        response = requests.get(url, headers=headers, timeout=random.randint(4,8))
+        soup = BeautifulSoup(response.text,"lxml")
+
+        found = False
+        for i in soup.find_all('p', attrs={"class":"sc-braxZu jjIUAi"}):
+            if i.text.strip() == 'Engine capacity':
+                engine_capacity.append(i.find_next_sibling().text)
+                found = True
+                
+        if not found:
+            engine_capacity.append(None)
+    return engine_capacity
