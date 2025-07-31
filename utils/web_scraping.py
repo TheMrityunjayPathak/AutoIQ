@@ -54,3 +54,67 @@ def scrape_car_listing(link):
     finally:
         if driver:
             driver.quit()
+
+def get_car_details(soup):
+    """
+    Extract car details from a BeautifulSoup object containing HTML content of a car listing page.
+
+    Parameters:
+        soup (BeautifulSoup): Parsed HTML content of a webpage.
+
+    Returns:
+        pd.DataFrame: A DataFrame containing the following columns ↓
+            model_name: Car model name.
+            km_driven: Kilometers driven for each car.
+            fuel_type: Fuel type of each car (e.g., Petrol, Diesel, CNG).
+            transmission: Transmission type (Manual or Automatic).
+            owner: Ownership status (e.g., First Owner, Second Owner).
+            price: Listed price of each car.
+            link: URL link to the individual car listing.
+    """
+    model_name = []
+    for i in soup.find_all('span', 'sc-braxZu kjFjan'):
+        model_name.append(i.text)
+
+    clean_model_name = []
+    for i in model_name:
+        if i.startswith('2'):
+            clean_model_name.append(i)
+
+    specs = []
+    for i in soup.find_all('p', 'sc-braxZu kvfdZL'):
+        specs.append(i.text)
+
+    clean_specs = []
+    for i in range(0,len(specs),5):
+        clean_specs.append(specs[i:i+5])
+
+    km_driven = []
+    for i in clean_specs:
+        km_driven.append(i[0])
+
+    fuel_type = []
+    for i in clean_specs:
+        fuel_type.append(i[1])
+
+    transmission = []
+    for i in clean_specs:
+        transmission.append(i[2])
+
+    owner = []
+    for i in clean_specs:
+        owner.append(i[3])
+            
+    price = []
+    for i in soup.find_all('p', 'sc-braxZu cyPhJl'):
+        price.append(i.text)
+
+    price = price[2:]
+
+    link = []
+    for i in soup.find_all('a', 'styles_carCardWrapper__sXLIp'):
+        link.append(i['href'])
+
+    df = pd.DataFrame({'model_name':clean_model_name,'km_driven':km_driven,'fuel_type':fuel_type,
+                       'transmission':transmission,'owner':owner,'price':price,'link':link})
+    return df
