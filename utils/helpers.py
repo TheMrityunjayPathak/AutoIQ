@@ -26,3 +26,32 @@ def km_driven_cleaner(value):
         return round(float(value.replace('L',''))*100000)
     else:
         return round(float(value.replace('k',''))*1000)
+    
+def price_cleaner(value):
+    """
+    Converts a string representing a price into an integer value in Indian Rupees (INR).
+
+    The input is expected to be a string ending with:
+    - 'lakh' representing 1 Lakh = 1,00,000 INR
+    - 'Crore' representing 1 Crore = 10,000,000 INR
+
+    The function parses the numeric part of the string, converts it to a float and multiplies it by the appropriate factor:
+    - If the value ends with 'lakh', it multiplies the number by 1,00,000.
+    - If the value ends with 'Crore', it multiplies the number by 10,000,000.
+
+    Parameters:
+        value (str): A string indicating the price, ending with either 'lakh' or 'Crore'.
+
+    Returns:
+        price (int): The equivalent price in Indian Rupees as an integer.
+
+    Example:
+        >>> price_cleaner("5.5lakh")
+        550000
+        >>> price_cleaner("1.2Crore")
+        12000000
+    """
+    if value.strip().endswith('lakh'):
+        return round(float(value.replace('lakh',''))*100000)
+    else:
+        return round(float(value.replace('Crore',''))*10000000)
