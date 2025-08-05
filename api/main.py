@@ -55,3 +55,9 @@ app.add_middleware(
     allow_methods=["GET", "POST"],
     allow_headers=["*"],
 )
+
+# Root Endpoint
+@app.get("/", tags=['General'])
+def root():
+    logger.info("Root endpoint accessed")
+    return {"message": "Pipeline is live"}
