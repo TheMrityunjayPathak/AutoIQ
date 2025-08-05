@@ -6,3 +6,6 @@
 
 # Python Cache
 __pycache__/
+
+# Environment File
+.env
