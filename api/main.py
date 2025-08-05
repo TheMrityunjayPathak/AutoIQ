@@ -61,3 +61,13 @@ app.add_middleware(
 def root():
     logger.info("Root endpoint accessed")
     return {"message": "Pipeline is live"}
+
+# Health Check Endpoint
+@app.get("/health", tags=["Utility"])
+def health():
+    logger.info("Health endpoint accessed")
+    return {
+        "status": "ok",
+        "pipeline_loaded": app.state.pipe is not None,
+        "model_frequency_loaded": app.state.model_freq is not None
+    }
