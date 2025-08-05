@@ -38,3 +38,6 @@ async def lifespan(app: FastAPI):
         logger.exception("Model loading failed")
     
     yield
+
+# Creating FastAPI App Instance
+app = FastAPI(title='AutoIQ by Motor.co', lifespan=lifespan)
