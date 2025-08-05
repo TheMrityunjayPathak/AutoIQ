@@ -23,3 +23,18 @@ from api.config import settings
 # Logging the Output
 logging.basicConfig(level=logging.INFO, format="%(levelname)s:    %(message)s")
 logger = logging.getLogger(__name__)
+
+# Loading Pipeline and Model Frequency
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    try:
+        with open(settings.PIPE_PATH, "rb") as f:
+            app.state.pipe = pickle.load(f)
+            logger.info("Pipeline loaded successfully")
+        with open(settings.MODEL_FREQ_PATH, "rb") as f:
+            app.state.model_freq = pickle.load(f)
+            logger.info("Model frequency loaded successfully")
+    except Exception:
+        logger.exception("Model loading failed")
+    
+    yield
