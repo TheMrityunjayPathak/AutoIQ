@@ -71,3 +71,14 @@ def health():
         "pipeline_loaded": app.state.pipe is not None,
         "model_frequency_loaded": app.state.model_freq is not None
     }
+
+# Define Input Data Schema using Pydantic
+class Input(BaseModel):
+    brand: str = Field(..., description="Brand Name of your Car", example="MG")
+    model: str = Field(..., description="Model Name of your Car", example="HECTOR")  
+    km_driven: int = Field(..., ge=0, description="KM Driven of your Car", example=80000)
+    engine_capacity: int = Field(..., ge=0, description="Engine Capacity (in cc) of your Car", example=1498)
+    fuel_type: str = Field(..., description="Fuel Type of your Car", example="Petrol")
+    transmission: str = Field(..., description="Transmission of your Car", example="Manual")
+    year: int = Field(..., ge=2010, le=2024, description="Manufacture Year of your Car", example=2022)
+    owner: str = Field(..., description="Owner Type of your Car", example="1st owner")
