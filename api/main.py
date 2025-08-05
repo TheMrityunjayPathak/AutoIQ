@@ -19,3 +19,7 @@ from slowapi import Limiter, _rate_limit_exceeded_handler
 
 # Local Modules
 from api.config import settings
+
+# Logging the Output
+logging.basicConfig(level=logging.INFO, format="%(levelname)s:    %(message)s")
+logger = logging.getLogger(__name__)
