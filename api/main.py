@@ -82,3 +82,47 @@ class Input(BaseModel):
     transmission: str = Field(..., description="Transmission of your Car", example="Manual")
     year: int = Field(..., ge=2010, le=2024, description="Manufacture Year of your Car", example=2022)
     owner: str = Field(..., description="Owner Type of your Car", example="1st owner")
+
+# Prediction Endpoint
+@app.post("/predict", tags=['Prediction'])
+@limiter.limit("10/minute")
+def predict(data: Input, request: Request):
+    pipe = request.app.state.pipe
+    model_freq = request.app.state.model_freq
+
+    # Check if Models are Loaded
+    if pipe is None:
+        logger.error("Pipeline is not loaded")
+        return {"error": "Pipeline is not available"}
+    if model_freq is None:
+        logger.error("Model frequency is not loaded")
+        return {"error": "Model frequency is not available"}
+
+    try:
+        input_data = pd.DataFrame({
+                        'brand':[data.brand],
+                        'model_freq':[model_freq.get(data.model)],
+                        'km_driven':[data.km_driven],
+                        'engine_capacity':[data.engine_capacity],
+                        'fuel_type':[data.fuel_type],
+                        'transmission':[data.transmission],
+                        'year':[data.year],
+                        'owner':[data.owner]
+                        })
+        logger.info("Input data prepared for prediction")
+        
+        prediction = round(pipe.predict(input_data)[0])
+        logger.info("Prediction made successfully")
+
+        lower_limit = prediction - settings.MAE
+        upper_limit = prediction + settings.MAE
+
+        format_lower = format_currency(round(lower_limit,3), 'INR', locale='en_IN')
+        format_upper = format_currency(round(upper_limit,3), 'INR', locale='en_IN')
+
+        result = f'{format_lower.split('.')[0]} to {format_upper.split('.')[0]}'
+        logger.info("Prediction formatted successfully")
+        return {"output": result}
+    except Exception:
+        logger.exception("Prediction failed due to an exception")
+        return {"error": "An unexpected error occurred during prediction"}
