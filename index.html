@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<title>AutoIQ by Motor.co</title>
+
+<!--Favicon Section-->
+<link rel="icon" type="image/x-icon" href="images/favicon.png">
+
+<!--Font Awesome Section-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+<!--CSS File Section-->
+<link rel="stylesheet" href="style.css">
+
+<!--Google Fonts Section-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!--Navbar Section-->
+<div class="navbar">
+    <div class="logo">
+        <img src="images/favicon.png">
+    </div>
+    <div class="menu">
+        <a href="#">Features</a>
+        <a href="#">Benefits</a>
+        <a href="#">Pricing</a>
+        <a href="#">Contact</a>
+    </div>
+    <div class="login-button">
+        <a href="#">Login&nbsp;&nbsp;<i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+</div>
+
+<!--Form Section-->
+<div class="form">
+
+    <div class="hero-image">
+        <img src="images/hero_image.png">
+    </div>
+
+    <div class="prediction">
+        <div class="model-input">
+            <!--Car Brand Input-->
+            <select id="brand">
+                <option value="">Select Brand of your Car</option>
+                <option value="Maruti">Maruti</option>
+                <option value="Tata">Tata</option>
+                <option value="Nissan">Nissan</option>
+                <option value="Renault">Renault</option>
+                <option value="Hyundai">Hyundai</option>
+                <option value="Honda">Honda</option>
+                <option value="KIA">KIA</option>
+                <option value="MG">MG</option>
+                <option value="Ford">Ford</option>
+                <option value="Skoda">Skoda</option>
+                <option value="Volkswagen">Volkswagen</option>
+                <option value="Mahindra">Mahindra</option>
+                <option value="Toyota">Toyota</option>
+                <option value="Jeep">Jeep</option>
+                <option value="Datsun">Datsun</option>
+                <option value="Audi">Audi</option>
+                <option value="BMW">BMW</option>
+                <option value="Mercedes">Mercedes</option>
+            </select>
+            
+            <!--Car Model Input-->
+            <select id="model">
+                <option value="">Select Model of your Car</option>
+            </select>
+
+            <!--KM Driven Input-->
+            <input id="km_driven" placeholder="Enter KM Driven of your Car" type="number" required>
+
+            <!--Engine Capacity Input-->
+            <input id="engine_capacity" placeholder="Enter Engine Capacity (in CC) of your Car" type="number" required>
+
+            <!--Fuel Type Input-->
+            <select id="fuel_type">
+                <option value="">Select Fuel Type of your Car</option>
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+                <option value="CNG">CNG</option>
+            </select>
+
+            <!--Transmission Input-->
+            <select id="transmission">
+                <option value="">Select Transmission of your Car</option>
+                <option value="Automatic">Automatic</option>
+                <option value="Manual">Manual</option>
+            </select>
+
+            <!--Manufacture Year Input-->
+            <select id="year">
+                <option value="">Select Manufacture Year of your Car</option>
+                <option value="2010">2010</option>
+                <option value="2011">2011</option>
+                <option value="2012">2012</option>
+                <option value="2013">2013</option>
+                <option value="2014">2014</option>
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+            </select>
+
+            <!--Owner Input-->
+            <div id="owner" class="owner">
+                <input type="radio" id="owner1" name="owner_type" value="1st owner" checked>
+                <label for="owner1">First Owner</label>
+                <input type="radio" id="owner2" name="owner_type" value="2nd owner">
+                <label for="owner2">Second Owner</label>
+                <input type="radio" id="owner3" name="owner_type" value="3rd owner">
+                <label for="owner3">Third Owner</label>
+                <input type="radio" id="owner4" name="owner_type" value="Others">
+                <label for="owner4">Others</label>
+            </div>
+
+            <!--Form Button Section-->
+            <div class="form-button">
+                <button onclick="predict()"><i class="fa-solid fa-earth-americas"></i>&nbsp;&nbsp;Predict</button>
+                <button onclick="resetForm()"><i class="fa-solid fa-rotate-right"></i>&nbsp;&nbsp;Reset</button>
+            </div>
+        </div>
+
+        <!--Prediction Result-->
+        <div class="prediction-result">
+            <p id="result" class="initial-message">
+                Please fill the form to get the estimated value of your car.
+            </p>
+        </div>
+
+    </div>
+</div>
+
+<!--Footer Section-->
+<div class="footer">
+    <p>AutoIQ</p>
+    by Motor.co
+</div>
+
+<!--Javascript File Section-->
+<script src="script.js"></script>
+
+</body>
+</html>
