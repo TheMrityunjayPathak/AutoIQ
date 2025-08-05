@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+pandas
+sigfig
+pydantic
+scikit-learn
+xgboost
+babel
+pydantic_settings
+slowapi
