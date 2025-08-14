@@ -40,7 +40,7 @@ async def lifespan(app: FastAPI):
     yield
 
 # Creating FastAPI App Instance
-app = FastAPI(title='AutoIQ by Motor.co', lifespan=lifespan)
+app = FastAPI(title="AutoIQ by Motor.co", lifespan=lifespan)
 
 # Setting up Rate Limiter
 limiter = Limiter(key_func=get_remote_address)
@@ -57,7 +57,7 @@ app.add_middleware(
 )
 
 # Root Endpoint
-@app.get("/", tags=['General'])
+@app.get("/", tags=["General"])
 def root():
     logger.info("Root endpoint accessed")
     return {"message": "Pipeline is live"}
@@ -84,7 +84,7 @@ class Input(BaseModel):
     owner: str = Field(..., description="Owner Type of your Car", example="1st owner")
 
 # Prediction Endpoint
-@app.post("/predict", tags=['Prediction'])
+@app.post("/predict", tags=["Prediction"])
 @limiter.limit("10/minute")
 def predict(data: Input, request: Request):
     pipe = request.app.state.pipe
@@ -100,14 +100,14 @@ def predict(data: Input, request: Request):
 
     try:
         input_data = pd.DataFrame({
-                        'brand':[data.brand],
-                        'model_freq':[model_freq.get(data.model)],
-                        'km_driven':[data.km_driven],
-                        'engine_capacity':[data.engine_capacity],
-                        'fuel_type':[data.fuel_type],
-                        'transmission':[data.transmission],
-                        'year':[data.year],
-                        'owner':[data.owner]
+                        "brand":[data.brand],
+                        "model_freq":[model_freq.get(data.model)],
+                        "km_driven":[data.km_driven],
+                        "engine_capacity":[data.engine_capacity],
+                        "fuel_type":[data.fuel_type],
+                        "transmission":[data.transmission],
+                        "year":[data.year],
+                        "owner":[data.owner]
                         })
         logger.info("Input data prepared for prediction")
         
@@ -117,10 +117,10 @@ def predict(data: Input, request: Request):
         lower_limit = prediction - settings.MAE
         upper_limit = prediction + settings.MAE
 
-        format_lower = format_currency(round(lower_limit,3), 'INR', locale='en_IN')
-        format_upper = format_currency(round(upper_limit,3), 'INR', locale='en_IN')
+        format_lower = format_currency(round(lower_limit,3), "INR", locale="en_IN")
+        format_upper = format_currency(round(upper_limit,3), "INR", locale="en_IN")
 
-        result = f'{format_lower.split('.')[0]} to {format_upper.split('.')[0]}'
+        result = f"{format_lower.split('.')[0]} to {format_upper.split('.')[0]}"
         logger.info("Prediction formatted successfully")
         return {"output": result}
     except Exception:
