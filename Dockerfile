@@ -54,4 +54,4 @@ EXPOSE 8000
 # Default command to run the FastAPI app with Uvicorn in production mode.
 # --host 0.0.0.0 allows external connections (necessary in Docker).
 # --port 8000 specifies the port.
-CMD ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["sh", "-c", "uvicorn api.main:app --host 0.0.0.0 --port ${PORT:-8000}"]
