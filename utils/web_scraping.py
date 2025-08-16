@@ -64,13 +64,14 @@ def get_car_details(soup):
 
     Returns:
         pd.DataFrame: A DataFrame containing the following columns ↓
-            model_name: Car model name.
-            km_driven: Kilometers driven for each car.
-            fuel_type: Fuel type of each car (e.g., Petrol, Diesel, CNG).
-            transmission: Transmission type (Manual or Automatic).
-            owner: Ownership status (e.g., First Owner, Second Owner).
-            price: Listed price of each car.
-            link: URL link to the individual car listing.
+            model_name : Model name of the car (2014 Hyundai Grand i10, etc).
+            fuel_type : Type of fuel the car uses (Petrol, Diesel, CNG, Electric).
+            transmission : Type of transmission the car has (Automatic or Manual).
+            owner : Number of previous owners (1st owner, 2nd owner, 3rd owner, etc).
+            engine_capacity : Size of the engine (in cc).
+            km_driven : Total distance traveled by the car (in km).
+            price : Selling price of the car (target variable).
+            link : URL to individual car listings page.
     """
     model_name = []
     for i in soup.find_all('span', 'sc-braxZu kjFjan'):
