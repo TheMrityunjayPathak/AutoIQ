@@ -20,7 +20,7 @@
 <hr>
 
 ## Problem Statement
-- In the used car market, buyers and sellers often struggle to determine a fair and accurate price for their vehicle.
+- In the used car market, buyers and sellers often struggle to determine a fair price for their vehicle.
 - This project aims to provide accurate and transparent pricing for used cars by analyzing real-world data.
 - It will assist both buyers and sellers make data-driven decisions and ensure fair transactions.
 
@@ -776,6 +776,16 @@ Access the live Website [here](https://themrityunjaypathak.github.io/AutoIQ/) or
 
 <a href="https://themrityunjaypathak.github.io/AutoIQ/"><img alt="frontend-ui" src="https://github.com/user-attachments/assets/881e47b3-85f2-4cbf-b063-3e9e81c68b5f"></a>
 
+> [!IMPORTANT]
+>
+> The API for this project is deployed using the free tier on Render.
+>
+> As a result, it may go to sleep after periods of inactivity.
+> 
+> Please start the API first by visiting the API URL. Then, navigate to the website to make predictions.
+> 
+> If the API was inactive, the first prediction may take a few seconds while the server spins back up.
+
 <hr>
 
 ## Model Training & Evaluation
@@ -1109,10 +1119,10 @@ best_model = rcv.best_estimator_
 
 #### End-to-End Deployment
 - Built and deployed a complete machine learning pipeline as a FastAPI service.
-- Enabled real-time used car price prediction from a dataset of ~2,800 cars.
+- Enabled real-time used car price prediction from a dataset of 2,800+ cars.
 
 #### Dataset Optimization
-- Reduced dataset memory usage by ~90% through data type optimization.
+- Reduced dataset memory usage by 90% through data type optimization.
 - Converted dataset to Parquet format, significantly improving preprocessing speed.
 
 #### Data-Driven Model Selection
@@ -1120,11 +1130,11 @@ best_model = rcv.best_estimator_
 - Ensured only top performers made it to production.
   
 #### Significant Performance Gains
-- Delivered ~30% lower MAE and ~12% higher R2-Score compared to the baseline model.
+- Delivered 30% lower MAE and 12% higher R2-Score compared to the baseline model.
 - Achieved these gains by implementing stacking ensemble and hyperparameter tuning.
   
 #### Greater Prediction Reliability
-- Improved model stability by ~70%, ensuring more consistent and reliable output in production.
+- Improved model stability by 70%, ensuring more consistent and reliable output in production.
 
 <hr>
 
