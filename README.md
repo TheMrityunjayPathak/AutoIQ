@@ -1181,6 +1181,7 @@ best_model = rcv.best_estimator_
 ├── style.css                 # Frontend CSS File
 ├── script.js                 # Frontend JS File
 ├── requirements.txt          # List of required libraries for the Project
+├── LICENSE                   # License specifying permissions and usage rights
 └── README.md                 # Detailed documentation of the Project
 ```
 
