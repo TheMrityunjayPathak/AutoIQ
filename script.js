@@ -61,12 +61,12 @@ async function predict() {
     const resultElement = document.getElementById("result");
     resultElement.className = "";
 
-    const brand = document.getElementById("brand").value;
-    const model = document.getElementById("model").value;
+    const brand = document.getElementById("brand").value.trim();
+    const model = document.getElementById("model").value.trim();
     const km_driven = parseInt(document.getElementById("km_driven").value);
     const engine_capacity = parseInt(document.getElementById("engine_capacity").value);
-    const fuel_type = document.getElementById("fuel_type").value;
-    const transmission = document.getElementById("transmission").value;
+    const fuel_type = document.getElementById("fuel_type").value.trim();
+    const transmission = document.getElementById("transmission").value.trim();
     const year = parseInt(document.getElementById("year").value);
     const ownerRadios = document.getElementsByName("owner_type");
     let owner = "";
@@ -78,8 +78,41 @@ async function predict() {
     }
 
     // Validation Check for Inputs
-    if (!brand || !model || !km_driven || !engine_capacity || !fuel_type || !transmission || !year || !owner) {
+    if (!brand || !model || !fuel_type || !transmission || !owner) {
+        resultElement.className = "result-error";
         document.getElementById('result').textContent = "Please fill all the details.";
+        return;
+    }
+
+    if (isNaN(km_driven) || km_driven <= 1000 || km_driven > 200000) {
+        resultElement.className = "result-error";
+        document.getElementById('result').textContent = "Invalid KM Driven value. Please enter a value between 1,000 and 2,00,000 km.";
+        return;
+    }
+
+    if (isNaN(engine_capacity) || engine_capacity <= 700 || engine_capacity > 3000) {
+        resultElement.className = "result-error";
+        document.getElementById('result').textContent = "Invalid Engine Capacity value. Please enter a value between 700 and 3,000 cc.";
+        return;
+    }
+
+    if (isNaN(year) || year < 2010 || year > 2024) {
+        resultElement.className = "result-error";
+        document.getElementById('result').textContent = "Invalid Year value. Please enter a value between 2010 and 2024.";
+        return;
+    }
+
+    const validFuelTypes = ["Petrol", "Diesel", "CNG"];
+    if (!validFuelTypes.includes(fuel_type)) {
+        resultElement.className = "result-error";
+        document.getElementById('result').textContent = "Please select a valid Fuel Type (Petrol, Diesel, or CNG).";
+        return;
+    }
+
+    const validTransmissions = ["Manual", "Automatic"];
+    if (!validTransmissions.includes(transmission)) {
+        resultElement.className = "result-error";
+        document.getElementById('result').textContent = "Please select a valid Transmission Type (Manual or Automatic).";
         return;
     }
 
