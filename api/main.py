@@ -7,6 +7,7 @@ import pandas as pd
 from sigfig import round
 from fastapi import FastAPI, Request
 from pydantic import BaseModel, Field
+from enum import Enum
 from babel.numbers import format_currency
 from contextlib import asynccontextmanager
 from fastapi.middleware.cors import CORSMiddleware
@@ -72,16 +73,34 @@ def health():
         "model_frequency_loaded": app.state.model_freq is not None
     }
 
+# Input validation for fuel_type
+class FuelType(str, Enum):
+    PETROL = "Petrol"
+    DIESEL = "Diesel"
+    CNG = "CNG"
+
+# Input validation for transmission
+class Transmission(str, Enum):
+    MANUAL = "Manual"
+    AUTOMATIC = "Automatic"
+
+# Input validation for owner
+class OwnerType(str, Enum):
+    FIRST = "1st owner"
+    SECOND = "2nd owner"
+    THIRD = "3rd owner"
+    OTHERS = "Others"
+
 # Define Input Data Schema using Pydantic
 class Input(BaseModel):
     brand: str = Field(..., description="Brand Name of your Car", example="MG")
     model: str = Field(..., description="Model Name of your Car", example="HECTOR")  
-    km_driven: int = Field(..., ge=0, description="KM Driven of your Car", example=80000)
-    engine_capacity: int = Field(..., ge=0, description="Engine Capacity (in cc) of your Car", example=1498)
-    fuel_type: str = Field(..., description="Fuel Type of your Car", example="Petrol")
-    transmission: str = Field(..., description="Transmission of your Car", example="Manual")
+    km_driven: int = Field(..., ge=1000, le=200000, description="KM Driven of your Car", example=80000)
+    engine_capacity: int = Field(..., ge=700, le=3000, description="Engine Capacity (in cc) of your Car", example=1498)
+    fuel_type: FuelType = Field(..., description="Fuel Type of your Car", example="Petrol")
+    transmission: Transmission = Field(..., description="Transmission of your Car", example="Manual")
     year: int = Field(..., ge=2010, le=2024, description="Manufacture Year of your Car", example=2022)
-    owner: str = Field(..., description="Owner Type of your Car", example="1st owner")
+    owner: OwnerType = Field(..., description="Owner Type of your Car", example="1st owner")
 
 # Prediction Endpoint
 @app.post("/predict", tags=["Prediction"])
