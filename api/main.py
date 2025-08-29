@@ -104,7 +104,7 @@ class Input(BaseModel):
 
 # Prediction Endpoint
 @app.post("/predict", tags=["Prediction"])
-@limiter.limit("10/minute")
+@limiter.limit("5/minute")
 def predict(data: Input, request: Request):
     pipe = request.app.state.pipe
     model_freq = request.app.state.model_freq
