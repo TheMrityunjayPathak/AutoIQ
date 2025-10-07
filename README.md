@@ -1118,23 +1118,24 @@ best_model = rcv.best_estimator_
 ## Impact
 
 #### End-to-End Deployment
-- Built and deployed a complete machine learning pipeline as a FastAPI service.
-- Enabled real-time used car price prediction from a dataset of 2,800+ cars.
+- Built and deployed a complete ML pipeline as a FastAPI service for real-time used car price predictions.
+- Helped the business make faster and more accurate pricing decisions for used cars.
 
 #### Dataset Optimization
-- Reduced dataset memory usage by 90% through data type optimization.
-- Converted dataset to Parquet format, significantly improving preprocessing speed.
+- Reduced dataset memory usage by 90%, cutting down on storage costs and improving system performance.
+- Converted the dataset to Parquet format, speeding up data processing and reducing waiting time.
 
 #### Data-Driven Model Selection
-- Used cross-validation to evaluate multiple regression models.
-- Ensured only top performers made it to production.
+- Tested multiple regression models and chose the best ones using cross-validation, ensuring accurate pricing.
+- Reduced the chances of incorrect pricing by using only the top-performing models.
   
 #### Significant Performance Gains
-- Delivered 30% lower MAE and 12% higher R2-Score compared to the baseline model.
-- Achieved these gains by implementing stacking ensemble and hyperparameter tuning.
+- Achieved 30% lower MAE and 12% higher R2-score, making price predictions more accurate.
+- Better predictions led to more competitive pricing and higher sales potential.
   
 #### Greater Prediction Reliability
-- Improved model stability by 70%, ensuring more consistent and reliable output in production.
+- Increased model stability by 70%, making price predictions more consistent over time.
+- Reduced errors in pricing, which improved customer trust and ensured smoother operations.
 
 <hr>
 
