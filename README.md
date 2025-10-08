@@ -22,7 +22,6 @@
 ## Problem Statement
 - In the used car market, buyers and sellers often struggle to determine a fair price for their vehicle.
 - This project aims to provide accurate and transparent pricing for used cars by analyzing real-world data.
-- It will assist both buyers and sellers make data-driven decisions and ensure fair transactions.
 
 <hr>
 
