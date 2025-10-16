@@ -1,6 +1,6 @@
-<img alt="header" src="https://github.com/user-attachments/assets/067364b3-dc46-4834-89bf-40eb539ae09f">
+<h2 align='center'>AutoIQ : Car Price Prediction</h2>
 
-<hr>
+<a href="https://themrityunjaypathak.github.io/AutoIQ/"><img title="AutoIQ by Motor.co" src="https://github.com/user-attachments/assets/e34c618f-2773-4a1c-b632-9c822338918b"></a>
 
 ## Table of Contents
 - [Problem Statement](#problem-statement)
@@ -73,7 +73,7 @@
 <details>
 <summary>Click to view the HTML Element Snapshot</summary>
 &nbsp;
-<img alt="cars24" src="https://github.com/user-attachments/assets/66524e3d-4c26-4edc-8f8a-40b17016eda4">
+<img title="cars24" src="https://github.com/user-attachments/assets/66524e3d-4c26-4edc-8f8a-40b17016eda4">
 </details>
 
 > [!IMPORTANT]
@@ -115,7 +115,7 @@
 <details>
 <summary>Click to view the HTML Element Snapshot</summary>
 &nbsp;
-<img alt="cars24" src="https://github.com/user-attachments/assets/5185f66b-3de6-4354-ae11-fcb0b8fbb793">
+<img title="cars24" src="https://github.com/user-attachments/assets/5185f66b-3de6-4354-ae11-fcb0b8fbb793">
 </details>
 
 #### 3. Group Specifications
@@ -150,7 +150,7 @@
 <details>
 <summary>Click to view the HTML Element Snapshot</summary>
 &nbsp;
-<img alt="cars24" src="https://github.com/user-attachments/assets/9a974eca-b39b-4e9a-bdc3-ff5abe6c9491">
+<img title="cars24" src="https://github.com/user-attachments/assets/9a974eca-b39b-4e9a-bdc3-ff5abe6c9491">
 </details>
 
 #### 6. Extract Listing Links
@@ -165,7 +165,7 @@
 <details>
 <summary>Click to view the HTML Element Snapshot</summary>
 &nbsp;
-<img alt="cars24" src="https://github.com/user-attachments/assets/fbac495f-6894-41dc-b469-2d23e90e3610">
+<img title="cars24" src="https://github.com/user-attachments/assets/fbac495f-6894-41dc-b469-2d23e90e3610">
 </details>
 
 #### 7. Combine into a DataFrame
@@ -199,7 +199,7 @@
 <details>
 <summary>Click to view the HTML Element Snapshot</summary>
 &nbsp;
-<img alt="cars24" src="https://github.com/user-attachments/assets/80a81a7e-ffd6-4413-ab74-650dbf63afc6">
+<img title="cars24" src="https://github.com/user-attachments/assets/80a81a7e-ffd6-4413-ab74-650dbf63afc6">
 </details>
 
 #### 5. Extract the Value
@@ -291,7 +291,7 @@ The final dataset consists of 2,800+ unique car listings, with each record conta
 
 ## Workflow
 
-<img alt="workflow" src="https://github.com/user-attachments/assets/6a6ff974-a548-4556-bf74-e96a9fa10bb4">
+<img title="workflow" src="https://github.com/user-attachments/assets/6a6ff974-a548-4556-bf74-e96a9fa10bb4">
 
 <hr>
 
@@ -419,7 +419,7 @@ This opens the Swagger UI for testing the API endpoints.
 
 Access the live API [here](https://autoiq.onrender.com/docs) or Click on the Image below.
 
-<a href="https://autoiq.onrender.com/docs"><img alt="swagger-ui" src="https://github.com/user-attachments/assets/fe5432df-6a68-4e2d-ad83-279ce895251b"></a>
+<a href="https://autoiq.onrender.com/docs"><img title="swagger-ui" src="https://github.com/user-attachments/assets/fe5432df-6a68-4e2d-ad83-279ce895251b"></a>
 
 ### 6. Stop the Docker Container
 When you're done using the application, stop the running container.
@@ -436,7 +436,7 @@ Once the FastAPI server is running, you can test the API endpoints in Postman or
 - Launch the Postman application on your computer.
 - Click on the "New" button, then select "HTTP" requests.
 
-<img alt="postman-ui" src="https://github.com/user-attachments/assets/deccef9b-ab45-4b7c-80ad-ec5fe0844e81">
+<img title="postman-ui" src="https://github.com/user-attachments/assets/deccef9b-ab45-4b7c-80ad-ec5fe0844e81">
 
 ### 2. Using GET and POST Methods in Postman
 #### → GET Method
@@ -461,7 +461,7 @@ http://127.0.0.1:8000
 }
 ```
 
-<img alt="postman-get" src="https://github.com/user-attachments/assets/aaadad27-2074-4009-beae-35d36c82378d">
+<img title="postman-get" src="https://github.com/user-attachments/assets/aaadad27-2074-4009-beae-35d36c82378d">
 
 #### → POST Method
 - Send data to a server to create/update a resource.
@@ -500,7 +500,7 @@ http://127.0.0.1:8000/predict
 }
 ```
 
-<img alt="postman-post" src="https://github.com/user-attachments/assets/dfece1cc-37a5-4079-a0a1-a84a0f074c02">
+<img title="postman-post" src="https://github.com/user-attachments/assets/dfece1cc-37a5-4079-a0a1-a84a0f074c02">
 
 <hr>
 
@@ -512,12 +512,12 @@ Follow these steps carefully to containerize your project with Docker :
 - Before starting, make sure Docker is installed on your system.
 - Visit [Docker](https://www.docker.com/) → Click on Download Docker Desktop → Choose Windows / Mac / Linux
 
-<img alt="docker" src="https://github.com/user-attachments/assets/200fd0a3-68f1-40d7-b1a7-299f0d6aae8e">
+<img title="docker" src="https://github.com/user-attachments/assets/200fd0a3-68f1-40d7-b1a7-299f0d6aae8e">
 
 ### 2. Verify the Installation
 - Open Docker Desktop → Make sure Docker Engine is Running
 
-<img alt="docker-desktop" src="https://github.com/user-attachments/assets/5599f2fb-f1c1-4f0e-bc21-15fd31845270">
+<img title="docker-desktop" src="https://github.com/user-attachments/assets/5599f2fb-f1c1-4f0e-bc21-15fd31845270">
 
 ### 3. Create the Dockerfile
 - Create a `Dockerfile` and place it in the root folder of your Repository.
@@ -652,7 +652,7 @@ http://127.0.0.1:8000
 
 Access the Docker Hub [here](https://hub.docker.com/r/themrityunjaypathak/autoiq) or Click on the Image below.
 
-<a href="https://hub.docker.com/r/themrityunjaypathak/autoiq"><img alt="docker-hub" src="https://github.com/user-attachments/assets/b98b5b6b-e013-47fd-9b64-73616309b85c"></a>
+<a href="https://hub.docker.com/r/themrityunjaypathak/autoiq"><img title="docker-hub" src="https://github.com/user-attachments/assets/b98b5b6b-e013-47fd-9b64-73616309b85c"></a>
 
 #### Login to Docker Hub
 - Prompts you to enter your Docker Hub username and password.
@@ -719,22 +719,22 @@ Follow these steps carefully to deploy your FastAPI application on Render :
   
 - Create a New Web Service
 
-<img alt="new-web-service" src="https://github.com/user-attachments/assets/fc5c7c1b-d302-4813-b182-be40139a7043">
+<img title="new-web-service" src="https://github.com/user-attachments/assets/fc5c7c1b-d302-4813-b182-be40139a7043">
 &nbsp;
 
 - Link your GitHub Repository / Existing Docker Image
 
-<img alt="link-github-repo" src="https://github.com/user-attachments/assets/06c92254-5e97-4bd5-9c97-864618226c85">
+<img title="link-github-repo" src="https://github.com/user-attachments/assets/06c92254-5e97-4bd5-9c97-864618226c85">
 &nbsp;
 
 - Add details about your API
 
-<img alt="details" src="https://github.com/user-attachments/assets/f834eac3-b8b7-49d3-ba61-9d05acc9e80d">
+<img title="details" src="https://github.com/user-attachments/assets/f834eac3-b8b7-49d3-ba61-9d05acc9e80d">
 &nbsp;
 
 - Add Environment Variables in Render Dashboard (same as `.env`)
 
-<img alt="env-variable" src="https://github.com/user-attachments/assets/9c1cbb1d-f3eb-41f5-bed8-d83d71578abf">
+<img title="env-variable" src="https://github.com/user-attachments/assets/9c1cbb1d-f3eb-41f5-bed8-d83d71578abf">
 &nbsp;
 
 - Deploy the Web Service
@@ -773,7 +773,7 @@ You can open `index.html` directly in your browser or serve it via a local HTTP 
 
 Access the live Website [here](https://themrityunjaypathak.github.io/AutoIQ/) or Click on the Image below.
 
-<a href="https://themrityunjaypathak.github.io/AutoIQ/"><img alt="frontend-ui" src="https://github.com/user-attachments/assets/881e47b3-85f2-4cbf-b063-3e9e81c68b5f"></a>
+<a href="https://themrityunjaypathak.github.io/AutoIQ/"><img title="frontend-ui" src="https://github.com/user-attachments/assets/881e47b3-85f2-4cbf-b063-3e9e81c68b5f"></a>
 
 > [!IMPORTANT]
 >
@@ -941,7 +941,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-<img alt="model-comparison" src="https://github.com/user-attachments/assets/79fc4a22-1d71-4c63-8eaf-b40c19c8e936">
+<img title="model-comparison" src="https://github.com/user-attachments/assets/79fc4a22-1d71-4c63-8eaf-b40c19c8e936">
 
 ### 5. Creating Stacking Regressor
 ```python
@@ -977,18 +977,18 @@ Average R2-Score : 0.87
 Standard Deviation of R2-Score : 0.01
 ```
 
-<img alt="stacking-regressor" src="https://github.com/user-attachments/assets/758c669c-bdb8-4423-8ee8-565cf1158481">
+<img title="stacking-regressor" src="https://github.com/user-attachments/assets/758c669c-bdb8-4423-8ee8-565cf1158481">
 
 ### 6. Performance Evaluation Graphs
 
 #### Actual vs Predicted Plot
-| <img alt="ap-plot" src="https://github.com/user-attachments/assets/a97fb07b-2442-424d-b0b1-fcb1f5a75390"> | <img alt="ap-plot" src="https://github.com/user-attachments/assets/c0949198-ef58-4c0d-a280-4470c455bb90"> |
+| <img title="ap-plot" src="https://github.com/user-attachments/assets/a97fb07b-2442-424d-b0b1-fcb1f5a75390"> | <img title="ap-plot" src="https://github.com/user-attachments/assets/c0949198-ef58-4c0d-a280-4470c455bb90"> |
 |---|---|
 
 #### Learning Curve
 | R2-Score Curve | Error Curve |
 |---|---|
-| <img alt="lr-curve" src="https://github.com/user-attachments/assets/56912d24-f2a6-4c3b-95ce-a0489fa1652a"> | <img alt="lr-curve" src="https://github.com/user-attachments/assets/4fb325ac-90f8-4420-839e-6fdc187bbbf8"> |
+| <img title="lr-curve" src="https://github.com/user-attachments/assets/56912d24-f2a6-4c3b-95ce-a0489fa1652a"> | <img title="lr-curve" src="https://github.com/user-attachments/assets/4fb325ac-90f8-4420-839e-6fdc187bbbf8"> |
 
 ### 7. Hyperparameter Tuning
 ```python
@@ -1026,16 +1026,16 @@ best_model = rcv.best_estimator_
 #### Actual vs Predicted Plot
 | Before Tuning | After Tuning |
 |---|---|
-| <img alt="ap-plot" src="https://github.com/user-attachments/assets/3e2f14b3-3df8-42b0-b686-93fe5ef56a76"> | <img alt="ap-plot" src="https://github.com/user-attachments/assets/65f3d99b-e50c-4423-9531-f0d78274868d"> |
+| <img title="ap-plot" src="https://github.com/user-attachments/assets/3e2f14b3-3df8-42b0-b686-93fe5ef56a76"> | <img title="ap-plot" src="https://github.com/user-attachments/assets/65f3d99b-e50c-4423-9531-f0d78274868d"> |
 
 #### Learning Curve
 | R2-Score Curve (Before Tuning) | R2-Score Curve (After Tuning) |
 |---|---|
-| <img alt="lr-curve" src="https://github.com/user-attachments/assets/df3db351-a715-4558-ba8b-0c146c1b5233"> | <img alt="lr-curve" src="https://github.com/user-attachments/assets/e3f814e9-aac1-4fa3-8813-9114d14fcf7f"> |
+| <img title="lr-curve" src="https://github.com/user-attachments/assets/df3db351-a715-4558-ba8b-0c146c1b5233"> | <img title="lr-curve" src="https://github.com/user-attachments/assets/e3f814e9-aac1-4fa3-8813-9114d14fcf7f"> |
 
 | Error Curve (Before Tuning) | Error Curve (After Tuning) |
 |---|---|
-| <img alt="lr-curve" src="https://github.com/user-attachments/assets/b1489435-ae46-495a-831b-4f354ef9ec57"> | <img alt="lr-curve" src="https://github.com/user-attachments/assets/8afc7961-67cd-43ee-9541-4197871c7156"> |
+| <img title="lr-curve" src="https://github.com/user-attachments/assets/b1489435-ae46-495a-831b-4f354ef9ec57"> | <img title="lr-curve" src="https://github.com/user-attachments/assets/8afc7961-67cd-43ee-9541-4197871c7156"> |
 
 <hr>
 
@@ -1193,6 +1193,6 @@ This project is licensed under the [MIT License](LICENSE). You are free to use a
 
 <div align='left'>
   
-**[`^        Scroll to Top       ^`](#table-of-contents)**
+**[`^        Scroll to Top       ^`](#autoiq--car-price-prediction)**
 
 </div>
