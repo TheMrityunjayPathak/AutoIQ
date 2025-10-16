@@ -1117,24 +1117,24 @@ best_model = rcv.best_estimator_
 ## Impact
 
 #### End-to-End Deployment
-- Built and deployed a complete ML pipeline as a FastAPI service for real-time used car price predictions.
-- Helped the business make faster and more accurate pricing decisions for used cars.
+- Built and deployed a full ML pipeline using FastAPI for real-time used car price predictions.
+- Enabled quicker and more accurate pricing decisions for the business.
 
 #### Dataset Optimization
 - Reduced dataset memory usage by 90%, cutting down on storage costs and improving system performance.
-- Converted the dataset to Parquet format, speeding up data processing and reducing waiting time.
+- Converted the dataset to Parquet format for faster data processing and shorter load times.
 
 #### Data-Driven Model Selection
-- Tested multiple regression models and chose the best ones using cross-validation, ensuring accurate pricing.
-- Reduced the chances of incorrect pricing by using only the top-performing models.
+- Evaluated multiple regression models using cross-validation to select the most accurate ones.
+- Improved pricing accuracy by relying only on top-performing models.
   
 #### Significant Performance Gains
 - Achieved 30% lower MAE and 12% higher R2-score, making price predictions more accurate.
-- Better predictions led to more competitive pricing and higher sales potential.
+- Improved accuracy helped set more competitive prices and boosted sales potential.
   
 #### Greater Prediction Reliability
-- Increased model stability by 70%, making price predictions more consistent over time.
-- Reduced errors in pricing, which improved customer trust and ensured smoother operations.
+- Increased model stability by 70%, resulting in more consistent predictions.
+- Fewer pricing errors led to stronger customer trust and smoother operations.
 
 <hr>
 
@@ -1158,7 +1158,7 @@ best_model = rcv.best_estimator_
 │   ├── pipe.pkl
 │   └── model_freq.pkl
 │
-├── notebooks/                # Jupyter Notebook for Project Developement
+├── notebooks/                # Jupyter Notebooks for Project Developement
 │   └── data_cleaning.ipynb
 |   └── ...
 │
